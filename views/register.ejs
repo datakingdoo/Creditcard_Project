@@ -1,0 +1,56 @@
+<style>
+  .main-button{
+    text-align: right;
+  }
+</style>
+<%-include('header.ejs')%>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="page-content">
+        <form id="registerForm" action="/registerProc" method="post">
+          <div class="heading-section">
+            <h4 style="font-family: 'Poppins', sans-serif;"><em>Register!</em></h4>
+            <br>
+          </div>
+          <div class="form-group">
+            <label for="name"><h4>Name</h4></label>
+            <br>
+            <br>
+            <input type="text" name = "name" class="form-control2" id="name" >
+            <br>
+            <br>
+            <label for="email"><h4>Email</h4></label>
+            <br>
+            <br>
+            <input type="email" name = "email" class="form-control2" id="email">
+            <br>
+            <br>
+            <label for="password"><h4>Password</h4></label>
+            <br>
+            <br>
+            <input type="password" name = "pw" class="form-control2" id="pw">
+            <br>
+          </div>
+          <br>
+          <br>
+          <div class="main-button">
+            <a href="#" id="registerbtn">Register</a>
+          </div>
+        
+          <%-include('footer.ejs')%>
+        </form>
+        
+        <script>
+          document.getElementById('registerbtn').addEventListener('click', function() {
+            // 폼을 가져오고 submit() 메서드를 호출하여 제출
+            document.getElementById('registerForm').submit();
+          });
+        </script>
+        
+        
+    </div>
+    </div>
+  </div>
+</div>

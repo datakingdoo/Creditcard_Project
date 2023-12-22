@@ -1,0 +1,325 @@
+<style>
+  .main-button2{
+    text-align: center;
+  }
+  .heading-section2{
+    text-align: center;
+  }
+    /* 다른 스타일들 ... */
+
+    .form-check-input {
+    /* 원하는 버튼 크기로 조정하세요 */
+    width: 30px;
+    height: 30px;
+    font-size: 1.5rem; /* 원하는 폰트 크기로 조정하세요 */
+    /* 다른 스타일들 ... */
+  }
+
+  .form-check-label h4 {
+    font-size: 1.5rem !important; /* 원하는 폰트 크기로 조정하세요 */
+  }
+</style>
+
+<%-include('header.ejs')%>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="page-content">
+        
+        <% if(name){ %>  
+          <!-- ***** Banner Start ***** -->
+        <div class="main-banner2">
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="header-text">
+                
+                
+                  <h4><em><%=name%>님 </em>환영합니다 &#127804; </h4>
+                  <br>
+                  <br>
+                  <h4><em>연체 위험도 예측</em>을 통해</h4>
+                  <br>
+                  <br>
+                  <h4>더 나은 금융 의사결정을 경험하세요</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ***** Banner End ***** -->
+          <!-- ***** Gaming Library Start ***** -->
+          <div class="gaming-library1 profile-library">
+            <form id="gradeForm" action="/gradeProc" method="post">
+            <div class="col-lg-12">
+              <div class="heading-section">
+                <h4><em><%=name%>님</em> 당신의 정보를 입력해 주세요.</h4>
+                <br>
+              </div>
+              <div class="item">
+                <ul>
+                  <h2>성별</h2>
+                  <li>
+                    <input type="radio" id="gender_M" name="gender" class="form-check-input" value="0">
+                    <label for="gender_M" class="form-check-label"><h4>남자</h4></label>
+                  </li>
+                  <li>
+                    <input type="radio" id="gender_F" name="gender" class="form-check-input" value="1">
+                    <label for="gender_F" class="form-check-label"><h4>여자</h4></label>
+                  </li>
+                </ul>
+              </div>
+              <br>
+              <br>
+              <div class="item">
+                <ul>
+                <h2>차량 보유 여부</h2>
+                  <li>
+                    <input type="radio" id="car_O" name="car" class="form-check-input" value="1" >
+                    <label for="car_O" class="form-check-label"><h4>유</h4></label>
+                  </li>
+                  <li>
+                    <input type="radio" id="car_X" name="car" class="form-check-input" value="0">
+                    <label for="car_X" class="form-check-label"><h4>무</h4></label>
+                  </li>
+                </ul>
+              </div>
+              <br>
+              <br>
+              <div class="item">
+                <ul>
+                  <h2>부동산 보유 여부</h2>
+                  <li>
+                    <input type="radio" id="reality_O" name="reality" class="form-check-input" value="1" >
+                    <label for="reality_O" class="form-check-label"><h4>유</h4></label>
+                  </li>
+                  <li>
+                    <input type="radio" id="reality_X" name="reality" class="form-check-input" value="0">
+                    <label for="reality_X" class="form-check-label"><h4>무</h4></label>
+                  </li>
+                </ul>
+              </div>
+              <br>
+              <br>
+              <div class="item">
+                <ul>
+                  <h2>자녀 수</h2>
+                  <li>
+                    <input type="number" name="child_num" class="form-control" min="0" max="30">
+                  </li>
+                </ul>
+              </div>
+              <br>
+              <br>
+              <br>
+              <div class="item">
+                <ul>
+                  <h2>소득 유형</h2>
+                  <li>
+                    <input type="radio" id="state_servant" name="income_type" class="form-check-input" value="3" >
+                    <label for="state_servant"class="form-check-label"><h4>공무원</h4></label>
+                  </li>
+                  <li>
+                    <input type="radio" id="pensioner" name="income_type" class="form-check-input" value="4">
+                    <label for="pensioner"class="form-check-label"><h4>연금</h4></label>
+                  </li>
+                  <li>
+                    <input type="radio" id="working" name="income_type" class="form-check-input" value="2">  
+                    <label for="working"class="form-check-label"><h4>근로자</h4></label>
+                  </li>
+                  <li>
+                    <input type="radio" id="commercial_associate" name="income_type" class="form-check-input" value="1">
+                    <label for="commercial_associate"class="form-check-label"><h4>자영업</h4></label>
+                  </li>
+                  <li>
+                    <input type="radio" id="student" name="income_type" class="form-check-input" value="5">
+                    <label for="student"class="form-check-label"><h4>학생</h4></label>
+                  </li>
+                </ul>
+              </div>
+              <br>
+              <br>
+              <div class="item">
+                <ul>
+                  <h2>교육 수준</h2>
+                  <li>
+                    <input type="radio" id="Lower secondary" class="form-check-input" name="edu_type" value="1" >
+                    <label for="Lower secondary"class="form-check-label"><h4>중등과정 미만</h4></label>  
+                  </li>
+                  <li>
+                    <input type="radio" id="Secondary / secondary_special" name="edu_type" class="form-check-input" value="2">
+                    <label for="Secondary / secondary_special" class="form-check-label"><h4>중등과정</h4></label>
+                  </li>
+                  <li>
+                    <input type="radio" id="Incomplete higher" name="edu_type" class="form-check-input" value="3">
+                    <label for="Incomplete higher" class="form-check-label"><h4>고등과정 중퇴</h4></label>
+                  </li>
+                  <li>
+                    <input type="radio" id="Higher education" name="edu_type" class="form-check-input" value="4">
+                    <label for="Higher education" class="form-check-label"><h4>고등과정</h4></label>
+                  </li>
+                  <li>
+                    <input type="radio" id="Academic degree" name="edu_type" class="form-check-input" value="5">
+                    <label for="Academic degree" class="form-check-label"><h4>학사학위 이상</h4></label>
+                  </li>
+                </ul>
+              </div>
+              <br>
+              <br>
+              <div class="item">
+                <ul>
+                  <h2>결혼 여부</h2>
+                  <li>
+                    <input type="radio" id="Single / not married" name="family_type" class="form-check-input" value="1">
+                    <label for="Single / not married" class="form-check-label"><h4>미혼</h4></label>
+                  </li>
+                  <li>
+                    <input type="radio" id="Married" name="family_type" class="form-check-input" value="2">
+                    <label for="Married" class="form-check-label"><h4>기혼</h4></label>
+                  </li>
+                  <li>
+                    <input type="radio" id="Separated" name="family_type" class="form-check-input" value="3">
+                    <label for="Separated" class="form-check-label"><h4>이혼</h4></label>
+                  </li>
+                </ul>
+              </div>
+              <br>
+              <br>
+              <div class="item">
+                <ul>
+                  <h2>직업</h2>
+                  <li><input type="radio" id="HR staff" name="occyp_type" class="form-check-input" value="16" >
+                    <label for="HR staff" class="form-check-label"><h4>회사원</h4></label></li>
+                  <li><input type="radio" id="Core staff" name="occyp_type" class="form-check-input" value="5">
+                    <label for="Core staff" class="form-check-label"><h4>임원</h4></label></li>
+                  <li><input type="radio" id="Secretaries" name="occyp_type" class="form-check-input" value="15">
+                    <label for="Secretaries" class="form-check-label"><h4>비서</h4></label></li>
+                  <li><input type="radio" id="IT staff" name="occyp_type" class="form-check-input" value="17">
+                    <label for="IT staff" class="form-check-label"><h4>IT</h4></label></li>
+                  <li><input type="radio" id="Medicine staff" name="occyp_type" class="form-check-input" value="7">
+                    <label for="Medicine staff" class="form-check-label"><h4>의료업</h4></label></li>
+                  <li><input type="radio" id="Cooking staff" name="occyp_type" class="form-check-input" value="14">
+                    <label for="Cooking staff" class="form-check-label"><h4>요식업</h4></label></li>
+                  <li><input type="radio" id="Drivers" name="occyp_type" class="form-check-input" value="6">
+                    <label for="Drivers" class="form-check-label"><h4>운송업</h4></label></li>
+                  <li><input type="radio" id="Realty agents" name="occyp_type" class="form-check-input" value="10">
+                    <label for="Realty agents" class="form-check-label"><h4>부동산 중개업</h4></label></li>
+                  <li><input type="radio" id="Labores" name="occyp_type" class="form-check-input" value="1">
+                    <label for="Labores" class="form-check-label"><h4>건축업</h4></label></li>
+                  <li><input type="radio" id="Sales staff" name="occyp_type" class="form-check-input" value="3">
+                    <label for="Sales staff" class="form-check-label"><h4>영업</h4></label></li>
+                  <li><input type="radio" id="Security staff" name="occyp_type" class="form-check-input" value="11">
+                    <label for="Security staff" class="form-check-label"><h4>보안</h4></label></li>
+                  <li><input type="radio" id="Private service staff'" name="occyp_type" class="form-check-input" value="13">
+                    <label for="Private service staff'" class="form-check-label"><h4>자영업</h4></label></li>
+                  <li><input type="radio" id="High skill tech staff" name="occyp_type" class="form-check-input" value="4">
+                    <label for="High skill tech staff" class="form-check-label"><h4>전문직</h4></label></li>
+                  <li><input type="radio" id="Low-skill Labores" name="occyp_type" class="form-check-input" value="18">
+                    <label for="Low-skill Labores" class="form-check-label"><h4>계약직(알바)</h4></label></li>
+                  <li><input type="radio" id="unemployed" name="occyp_type" class="form-check-input" value="9">
+                    <label for="unemployed" class="form-check-label"><h4>무직</h4></label></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </div>
+              <br>
+              <br>
+              <br>
+              <div class="item">
+                <ul>
+                  <h2>가족 수</h2>
+                  <li>
+                    <input type="number" name="family_size" class="form-control" min="0" max="999999999999" >
+                  </li>
+                </ul>
+              </div>
+              <br>
+              <br>
+              <div class="item">
+                <ul>
+                  <h2>신용카드 발급이후 개월</h2>
+                  <li>
+                    <input type="number" name="begin_month" class="form-control" min="0" max="999999999999" >
+                  </li>
+                </ul>
+              </div>
+              <br>
+              <br>
+              <div class="item">
+                <ul>
+                  <h2>나이</h2>
+                  <li>
+                    <input type="number" name="Age" class="form-control" min="0" max="999999999999" >
+                  </li>
+                </ul>
+              </div>
+              <br>
+              <br>
+              <div class="item">
+                <ul>
+                  <h2>근속년</h2>
+                  <li>
+                    <input type="number" name="EMPLOYED" class="form-control" min="0" max="999999999999" >
+                  </li>
+                </ul>
+              </div>
+              <br>
+              <br>
+              <div class="item">
+                <ul>
+                  <h2>월 평균 소득</h2>
+                  <li>
+                    <input type="number" name="income_mean" class="form-control" min="0" max="999999999999" placeholder="원">
+                  </li>
+                </ul>
+              </div>
+              <br>
+              <div class="main-button">
+                <a href="#" id = gradeBtn>제출</a>
+              </div>
+              <%} else{ %>
+                <div class="heading-section2">
+                  <h4 style="font-family: 'Poppins', sans-serif;"><em>You need Login!</em></h4>
+                  <br>
+                </div>
+                <div class="main-button2">
+                  <a href="/gradelogin" role="button" style="font-family: 'Poppins', sans-serif;">Go to Login Page</a>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <%-include('footer.ejs')%>
+              <%} %>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+
+
+              
+            </div>
+          </form> 
+          <script>
+            document.getElementById('gradeBtn').addEventListener('click', function() {
+              // 폼을 가져오고 submit() 메서드를 호출하여 제출
+              document.getElementById('gradeForm').submit();
+            });
+          </script>
+          </div>
+          <!-- ***** Gaming Library End ***** -->
+          
+          <%-include('footer.ejs')%>
+              
+          </div>
+         
+      </div>
+    </div>
+  </div>
+</div>
+      

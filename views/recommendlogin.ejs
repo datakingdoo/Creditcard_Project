@@ -1,0 +1,21 @@
+<%-include('header.ejs')%>
+
+<form action = "/recommendloginProc" method="post">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item active" aria-current="page">로그인</li>
+        </ol>
+    </nav>
+    <div class="form-group">
+      <label for="email">이메일</label>
+      <input type="email" name = "email" class="form-control" id="email" >
+      
+      <label for="password">비밀번호</label>
+      <input type="password" name = "pw" class="form-control" id="pw">
+      </div>
+    
+    </div>
+    <br>
+    <button type="submit"  class="btn btn-primary">제출</button>
+</form> 
+<%-include('footer.ejs')%>

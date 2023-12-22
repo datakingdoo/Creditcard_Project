@@ -1,0 +1,171 @@
+<style>
+  .heading-section {
+  text-align: center;
+  }
+  .view-btn-container {
+  text-align: center;
+  
+  }
+
+  .lead {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: #666;
+  }
+
+  .category-btn {
+    width: 100%;
+    height: 100%;
+    min-width: 120px;
+    min-height: 150px;
+    background-color: #e75e8d;
+    
+    border: none;
+    color: #fff;
+    border-radius: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+
+  .category-btn:hover {
+    
+    background-color: #e75e8d !important;
+    transform: scale(1.05);
+    /* color: #000000 !important */
+  }
+
+  .fs-4 {
+    font-size: 1.8rem;
+  }
+
+  .btn-primary {
+    background-color: #666;
+    border-color: #666;
+    margin-top: 20px;
+  }
+
+  .btn-primary:hover {
+    background-color: #666;
+    border-color: #666;
+  }
+
+  #selectedCategories {
+    margin-top: 20px;
+    color: #fff;
+  }
+
+  .category-btn.active {
+    
+    background-color: #fff !important;
+    color: #e75e8d !important;
+  }
+
+  .alert {
+    display: none;
+    padding: 20px;
+    background-color: #f44336;
+    
+    color: #fff;
+    margin-top: 20px;
+  }
+</style>
+
+<%-include('header.ejs')%>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="page-content">
+          <!-- ***** Gaming Library Start ***** -->
+          <div class="gaming-library1 profile-library" >
+              <div class="heading-section"  >
+                <h4 style = "color : #fff; font-size: 50px !important;">&#127804;혜택 별 카테고리 선택&#127804;</h4>
+                <hr style="color: #fff;">
+                <br>
+              </div>
+          
+
+              <form action="/recommendProc" method="post" id="categoryForm">
+                <!-- Add buttons for each category -->
+                <div class="container">
+                  <div class="row row-cols-5">
+                    <% categories.forEach(category => { %>
+                      <div class="col mb-3">
+                        <button type="button" class="btn btn-outline-info category-btn rounded-3" data-category="<%= category %>" style = "background-color: #e75e8d; color: #fff; font-size: 1.8rem ;" >
+                          <span  class="fs-4" style="font-size: 35px !important;"><%= category %></span>
+                        </button>
+                      </div>
+                    <% }) %>
+                  </div>
+                </div>
+                <br>
+                <hr style="color: #fff;">
+                <br>
+                <div class="view-btn-container">
+                  <button type="button" class="btn btn-primary btn-lg mt-3" id="viewBtn"style = "background-color: #e75e8d;">보기</button>
+                </div>
+
+                <!-- Add a container to display selected categories -->
+                <div id="selectedCategories" class="mt-3"></div>
+
+                <!-- Add a hidden input field for selected categories -->
+                <input type="hidden" name="selectedCategories" id="selectedCategoriesInput" value="">
+
+                
+
+                <script>
+                  // JavaScript code for handling category selection and form submission
+                  document.addEventListener("DOMContentLoaded", function () {
+                    const categoryButtons = document.querySelectorAll(".category-btn");
+                    const viewButton = document.getElementById("viewBtn");
+                    const selectedCategoriesDiv = document.getElementById("selectedCategories");
+                    const categoryForm = document.getElementById("categoryForm");
+
+                    let selectedCategories = [];
+
+                    // 카테고리 버튼에 이벤트 리스너 추가
+                    categoryButtons.forEach((button) => {
+                      button.addEventListener("click", function () {
+                        // 버튼 클릭 시 "active" 클래스 토글
+                        button.classList.toggle("active");
+
+                        // 선택된 카테고리 배열 업데이트
+                        const category = button.dataset.category;
+                        if (selectedCategories.includes(category)) {
+                          selectedCategories = selectedCategories.filter(c => c !== category);
+                        } else {
+                          // 최대 3개의 카테고리 선택 가능 여부 확인
+                          if (selectedCategories.length < 3) {
+                            selectedCategories.push(category);
+                        }   else {
+                            // 3개 이상의 카테고리가 선택되면 추가적인 선택을 막음
+                            alert("최대 3개의 카테고리만 선택할 수 있습니다.");
+                            button.classList.remove("active"); // "active" 클래스 제거
+                        }
+                      }
+                      });
+                    });
+
+                    // Add event listener to the "보기" button
+                    viewButton.addEventListener("click", function () {
+                      // Display selected categories
+                      selectedCategoriesDiv.innerHTML = `<p>선택된 카테고리: ${selectedCategories.join(', ')}</p>`;
+
+                      // Update the hidden input with selected categories
+                      document.getElementById("selectedCategoriesInput").value = selectedCategories.join(',');
+
+                      // Submit the form with selected categories
+                      categoryForm.submit();
+                    });
+                  });
+                </script>
+              </form>
+          
+          <!-- ***** Gaming Library End ***** -->
+          </div>
+
+          
+          <%-include('footer.ejs')%>
+        </div>
+      </div>
+    </div>
+  </div>
+

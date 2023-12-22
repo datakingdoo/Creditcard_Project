@@ -1,0 +1,235 @@
+<style>
+  .main-button2{
+    text-align: center;
+  }
+  .heading-section2{
+    text-align: center;
+  }
+</style>
+<%-include('header.ejs')%>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-content">
+
+          
+          <% if(name){ %> 
+            <div class="main-banner3">
+              <div class="row">
+                <div class="col-lg-7">
+                  <div class="header-text">
+                    <h4><em><%=name%>님 </em>환영합니다 &#127804; </h4>
+                  <br>
+                  <br>
+                  <h4>소비 내역 기반 <em>맞춤형 카드 추천</em>으로</h4>
+                  <br>
+                  <br>
+                  <h4>스마트한 금융 선택을 경험하세요</h4>
+                    
+                  </div>
+                </div>
+              </div>
+            </div> 
+            <!-- ***** Gaming Library Start ***** -->
+            <div class="gaming-library1 profile-library">
+              <form id="transactionForm" action="/transactionProc" method="post">
+              <div class="col-lg-12">
+                <div class="heading-section">
+                  <h4><em><%=name%>님</em> 당신의 소비내역을 입력해 주세요.</h4>
+                  <br>
+                </div>
+                <div class="item">
+                  <ul>
+                    <h2>교통</h2>
+                    <li>
+                      <input type="number" name="교통" class="form-control" min="0" max="999999999999" placeholder="원" >
+                    </li>
+                  </ul>
+                  <br>
+                  <br>
+                  <ul>
+                    <h2>주유</h2>
+                      <li>
+                        <input type="number" name="주유" class="form-control" min="0" max="999999999999" placeholder="원" >
+                      </li>
+                  </ul>
+                  <br>
+                  <br>
+                  <ul>
+                    <h2>마트 / 편의점</h2>
+                      <li>
+                        <input type="number" name="마트" class="form-control" min="0" max="999999999999" placeholder="원" >
+                      </li>
+                  </ul><br>
+                  <br>
+                  <ul>
+                    <h2>쇼핑</h2>
+                      <li>
+                        <input type="number" name="쇼핑" class="form-control" min="0" max="999999999999" placeholder="원" >
+                      </li>
+                  </ul><br>
+                  <br>
+                  <ul>
+                    <h2>푸드</h2>
+                      <li>
+                        <input type="number" name="푸드" class="form-control" min="0" max="999999999999" placeholder="원" >
+                      </li>
+                  </ul><br>
+                  <br>
+                  <ul>
+                    <h2>배달</h2>
+                      <li>
+                        <input type="number" name="배달" class="form-control" min="0" max="999999999999" placeholder="원" >
+                      </li>
+                  </ul><br>
+                  <br>
+                  <ul>
+                    <h2>카페 / 디저트</h2>
+                      <li>
+                        <input type="number" name="카페" class="form-control" min="0" max="999999999999" placeholder="원" >
+                      </li>
+                  </ul><br>
+                  <br>
+                  <ul>
+                    <h2>뷰티 / 피트니스</h2>
+                      <li>
+                        <input type="number" name="뷰티" class="form-control" min="0" max="999999999999" placeholder="원" >
+                      </li>
+                  </ul><br>
+                  <br>
+                  <ul>
+                    <h2>생활요금</h2>
+                      <li>
+                        <input type="number" name="생활요금" class="form-control" min="0" max="999999999999" placeholder="원" >
+                      </li>
+                  </ul><br>
+                  <br>
+                  <ul>
+                    <h2>의료</h2>
+                      <li>
+                        <input type="number" name="의료" class="form-control" min="0" max="999999999999" placeholder="원" >
+                      </li>
+                  </ul><br>
+                  <br>
+                  <ul>
+                    <h2>애완동물</h2>
+                      <li>
+                        <input type="number" name="애완동물" class="form-control" min="0" max="999999999999" placeholder="원" >
+                      </li>
+                  </ul><br>
+                  <br>
+                  <ul>
+                    <h2>자동차</h2>
+                      <li>
+                        <input type="number" name="자동차" class="form-control" min="0" max="999999999999" placeholder="원" >
+                      </li>
+                  </ul><br>
+                  <br>
+                  <ul>
+                    <h2>레저 / 스포츠</h2>
+                      <li>
+                        <input type="number" name="스포츠" class="form-control" min="0" max="999999999999" placeholder="원" >
+                      </li>
+                  </ul>
+                  <br>
+                  <br>
+                  <ul>
+                    <h2>영화 / 문화</h2>
+                      <li>
+                        <input type="number" name="영화" class="form-control" min="0" max="999999999999" placeholder="원" >
+                      </li>
+                  </ul>
+                  <br>
+                  <br>
+                  <ul>
+                    <h2>항공</h2>
+                      <li>
+                        <input type="number" name="항공" class="form-control" min="0" max="999999999999" placeholder="원" >
+                      </li>
+                  </ul>
+                  <br>
+                  <br>
+                  <ul>
+                    <h2>여행 / 숙박</h2>
+                      <li>
+                        <input type="number" name="여행" class="form-control" min="0" max="999999999999" placeholder="원" >
+                      </li>
+                  </ul>
+                  <br>
+                  <br>
+                  <ul>
+                    <h2>해외</h2>
+                      <li>
+                        <input type="number" name="해외" class="form-control" min="0" max="999999999999" placeholder="원" >
+                      </li>
+                  </ul>
+                  <br>
+                  <br>
+                  <ul>
+                    <h2>디지털구독</h2>
+                      <li>
+                        <input type="number" name="디지털구독" class="form-control" min="0" max="999999999999" placeholder="원" >
+                      </li>
+                  </ul>
+                  <br>
+                  <br>
+                  <ul>
+                    <h2>교육</h2>
+                      <li>
+                        <input type="number" name="교육" class="form-control" min="0" max="999999999999" placeholder="원" >
+                      </li>
+                  </ul>
+                  <br>
+                  <br>
+                  <ul>
+                    <h2>기타</h2>
+                      <li>
+                        <input type="number" name="기타" class="form-control" min="0" max="999999999999" placeholder="원" >
+                      </li>
+                  </ul>
+                </div>
+                  <br>
+                  <div class="main-button">
+                    <a href="#" id = transactionBtn>제출</a>
+                  </div>
+                  
+                  
+                  <%} else{ %>
+                    <div class="heading-section2">
+                      <h4 style="font-family: 'Poppins', sans-serif;"><em>You need Login!</em></h4>
+                      <br>
+                    </div>
+                    <div class="main-button2">
+                      <a href="/translogin" role="button" style="font-family: 'Poppins', sans-serif;">Go to Login Page</a>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <%-include('footer.ejs')%>
+                  <%} %>
+                  <br>
+                  <br>
+              
+              </div>
+            </form> 
+                <script>
+                  document.getElementById('transactionBtn').addEventListener('click', function() {
+                    // 폼을 가져오고 submit() 메서드를 호출하여 제출
+                    document.getElementById('transactionForm').submit();
+                  });
+                </script>
+            </div>
+            <!-- ***** Gaming Library End ***** -->
+            
+            <%-include('footer.ejs')%>
+                
+          
+          
+        </div>
+      </div>
+    </div>
+  </div>

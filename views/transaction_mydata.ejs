@@ -1,0 +1,185 @@
+<%- include('header.ejs') %>
+<style>
+    /* 표의 배경색을 흰색으로 변경 */
+.table {
+    background-color: #fff;
+}
+
+/* 표의 헤더 배경색을 어두운 색상으로 변경 */
+.table thead th {
+    background-color: #e75e8d; /* 적절한 어두운 배경 색상으로 변경 */
+    color: #fff; /* 헤더 텍스트 색상을 흰색으로 변경 */
+}
+
+/* 표의 내용 텍스트 색상을 어두운 색상으로 변경 */
+.table tbody td {
+    color: #343a40; /* 적절한 어두운 텍스트 색상으로 변경 */
+}
+
+/* 표의 크기를 키움 */
+.table {
+    width: 100%; /* 가득 차도록 100%로 설정 */
+    font-size: 1.65rem; /* 텍스트 크기를 키움 */
+}
+
+</style>
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="page-content">
+                            <!-- ***** Gaming Library Start ***** -->
+                            <div class="gaming-library1 profile-library">
+                                <div class="col-lg-12">
+                                    <div class="heading-section">
+                                        <h4><em><%=name%>님</em> 입력하신 정보</h4>
+                                        <br>
+                                    </div>
+                                    <div class="item">
+                                        <table class="table table-bordered">
+                                            <thead class="thead-dark">
+                                                <tr>
+                                                    <th>카테고리</th>
+                                                    <th>금액</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <% 
+                                                let total = 0;
+                                                transaction.forEach(item => { 
+                                                    total += parseInt(item.교통 || 0)+
+                                                            parseInt(item.주유 || 0)+
+                                                            parseInt(item.마트 || 0)+
+                                                            parseInt(item.쇼핑 || 0)+
+                                                            parseInt(item.푸드 || 0)+
+                                                            parseInt(item.배달 || 0)+
+                                                            parseInt(item.카페 || 0)+
+                                                            parseInt(item.뷰티 || 0)+
+                                                            parseInt(item.생활요금 || 0)+
+                                                            parseInt(item.의료 || 0)+
+                                                            parseInt(item.애완동물 || 0)+
+                                                            parseInt(item.자동차 || 0)+
+                                                            parseInt(item.스포츠 || 0)+
+                                                            parseInt(item.영화 || 0)+
+                                                            parseInt(item.항공 || 0)+
+                                                            parseInt(item.여행 || 0)+
+                                                            parseInt(item.해외 || 0)+
+                                                            parseInt(item.디지털구독 || 0)+
+                                                            parseInt(item.교육 || 0)+
+                                                            parseInt(item.기타 || 0);
+                                                %>
+                                                    <tr>
+                                                        <td>교통</td>
+                                                        <td><%= item.교통.toLocaleString() %></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>주유</td>
+                                                        <td><%= item.주유.toLocaleString() %></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>마트/편의점</td>
+                                                        <td><%= item.마트.toLocaleString() %></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>쇼핑</td>
+                                                        <td><%= item.쇼핑.toLocaleString() %></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>푸드</td>
+                                                        <td><%= item.푸드.toLocaleString() %></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>배달</td>
+                                                        <td><%= item.배달.toLocaleString() %></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>카페/디저트</td>
+                                                        <td><%= item.카페.toLocaleString() %></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>뷰티/피트니스</td>
+                                                        <td><%= item.뷰티.toLocaleString() %></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>생활요금</td>
+                                                        <td><%= item.생활요금.toLocaleString() %></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>의료</td>
+                                                        <td><%= item.의료.toLocaleString() %></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>애완동물</td>
+                                                        <td><%= item.애완동물.toLocaleString() %></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>자동차/하이패스</td>
+                                                        <td><%= item.자동차.toLocaleString() %></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>레저/스포츠</td>
+                                                        <td><%= item.스포츠.toLocaleString() %></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>영화/문화</td>
+                                                        <td><%= item.영화.toLocaleString() %></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>항공</td>
+                                                        <td><%= item.항공.toLocaleString() %></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>여행/숙박</td>
+                                                        <td><%= item.여행.toLocaleString() %></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>해외</td>
+                                                        <td><%= item.해외.toLocaleString() %></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>디지털구독</td>
+                                                        <td><%= item.디지털구독.toLocaleString() %></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>교육/육아</td>
+                                                        <td><%= item.교육.toLocaleString() %></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>기타</td>
+                                                        <td><%= item.기타.toLocaleString() %></td>
+                                                    </tr>
+                                                    <!-- 나머지 카테고리도 동일하게 추가 -->
+                                                    <!-- ... -->
+                                                <% });
+                                                %>
+                                                <tr style="background-color: #666;">
+                                                    <td style="color: #fff;"><strong>총액</strong></td>
+                                                    <td style="color: #fff;"><strong><%= total.toLocaleString() %></strong></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <hr />
+                                        <div class="main-button">
+                                            <a href="/transaction">다시 입력하기</a>
+                                            <a href="/trans_loading" id = transaction_searchBtn>카드 추천 받기</a>
+                                            <!-- <form id="transaction_searchForm" action = "/transaction_searchProc" method="post">
+                                                <a href="#" id = transaction_searchBtn>카드 추천 받기</a>
+                                            </form> -->
+                                            <!-- <script>
+                                                document.getElementById('transaction_searchBtn').addEventListener('click', function() {
+                                                  // 폼을 가져오고 submit() 메서드를 호출하여 제출
+                                                  document.getElementById('transaction_searchForm').submit();
+                                                });
+                                            </script> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ***** Gaming Library End ***** -->
+                            <%- include('footer.ejs') %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+

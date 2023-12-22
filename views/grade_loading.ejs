@@ -1,0 +1,61 @@
+<style>
+  /* HTML: <div class="loader"></div> */
+.loader {
+  width: calc(6*30px);
+  height: 50px;
+  display: flex;
+  color: #8d7958;
+  filter: drop-shadow(30px 25px 0 currentColor) drop-shadow(60px 0 0 currentColor) drop-shadow(120px 0 0 currentColor);
+  clip-path: inset(0 100% 0 0);
+  animation: l12 2s infinite steps(7);
+}
+.loader:before {
+  content: "";
+  width: 30px;
+  height: 25px;
+  --c:no-repeat radial-gradient(farthest-side,currentColor 92%,#0000);
+  background: 
+    var(--c) left /70% 70%,
+    var(--c) right/20% 20%,
+    var(--c) top    0 right 15%/20% 20%,
+    var(--c) bottom 0 right 15%/20% 20%;
+}
+@keyframes l12 {
+  100% {clip-path: inset(0 -30px 0 0)}
+}
+
+  </style>
+
+
+
+<%-include('header.ejs')%>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="page-content">
+
+              
+              <form action="/gradeSearchProc" method="post" id="gradeSearchForm">
+                <h1 class="display-4"><%=name%>님의 연체 정보를 확인 중 입니다</h1>
+                <div class="loader"></div>
+              </form>
+
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+<%-include('footer.ejs')%>
+
+<!-- 추가된 JavaScript 코드 -->
+<script>
+  // 페이지 로딩 후 5초 뒤에 결과 페이지로 이동
+  document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(function () {
+      // 폼을 선택하고 submit() 호출
+      document.getElementById("gradeSearchForm").submit();
+    }, 100); // 5초 동안 머무르기
+  });
+</script>

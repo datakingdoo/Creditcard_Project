@@ -1,0 +1,70 @@
+<%- include('header.ejs') %>
+<style>
+    /* 표의 배경색을 흰색으로 변경 */
+.table {
+    background-color: #fff;
+}
+
+/* 표의 헤더 배경색을 어두운 색상으로 변경 */
+.table thead th {
+    background-color: #e75e8d; /* 적절한 어두운 배경 색상으로 변경 */
+    color: #fff; /* 헤더 텍스트 색상을 흰색으로 변경 */
+}
+
+/* 표의 내용 텍스트 색상을 어두운 색상으로 변경 */
+.table tbody td {
+    color: #343a40; /* 적절한 어두운 텍스트 색상으로 변경 */
+}
+
+/* 표의 크기를 키움 */
+.table {
+    width: 100%; /* 가득 차도록 100%로 설정 */
+    font-size: 1.65rem; /* 텍스트 크기를 키움 */
+}
+
+</style>
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="page-content">
+                            <!-- ***** Gaming Library Start ***** -->
+                            <div class="gaming-library1 profile-library">
+                                <form id="transaction_searchForm" action = "/transaction_searchProc" method="post">
+                                <div class="col-lg-12">
+                                    <div class="heading-section">
+                                        <h4><em><%=name%>님</em> 그래프</h4>
+                                        <br>
+                                    </div>
+                                    <div class="item">
+                                        <table class="table table-bordered">
+                                            
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                    <div class='tableauPlaceholder' id='viz1701137667175' style='position: relative'><noscript><a href='#'><img alt='HR Dashboard ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;NS&#47;NS5WDJ4GJ&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;NS5WDJ4GJ' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;NS&#47;NS5WDJ4GJ&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='ko-KR' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1701137667175');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1200px';vizElement.style.height='827px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1200px';vizElement.style.height='827px';} else { vizElement.style.width='100%';vizElement.style.height='1777px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <hr />
+                                        <div class="main-button">
+                                            <a href="#" id = transaction_searchBtn>카드 추천 받으러 가기</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                </form>
+                                <script>
+                                    document.getElementById('transaction_searchBtn').addEventListener('click', function() {
+                                      // 폼을 가져오고 submit() 메서드를 호출하여 제출
+                                      document.getElementById('transaction_searchForm').submit();
+                                    });
+                                  </script>
+                            </div>
+                            <!-- ***** Gaming Library End ***** -->
+                            <%- include('footer.ejs') %>
+                        </div>
+                    </div>
+                </div>
+            </div>

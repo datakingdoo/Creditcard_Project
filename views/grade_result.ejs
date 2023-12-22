@@ -1,0 +1,68 @@
+<%-include('header.ejs')%>
+<div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-content">
+            <div class="main-banner">
+                <div class="row">
+                  <div class="col-lg-7">
+                      
+
+
+                        <h4><em><%=name%>님</em> 연체위험도가 <em><%= outputString %></em> &#127804; </h4>
+                        <% if (outputString === '낮습니다.') { %>
+                          <!-- '낮습니다'인 경우의 코드 블록 -->
+                          <h4>이대로 유지하세요</h4>
+                          <hr style="color: #fff;">
+                          <br>
+                          <!-- <h4>금융 안정을 유지하며 혜택을 누리는데 도움을 드릴 수 있습니다.</h4> -->
+                        <% } else if (outputString === '높습니다.') { %>
+                          <!-- '높습니다'인 경우의 코드 블록 -->
+                          <h4>카드사의 추천 한도보다 50%만 사용하세요</h4>
+                        <% } %>
+                        
+                        <div class="main-button">
+                          <a href="/transaction" role="button">카드 추천 받으러 가기🔗</a>
+                        </div>
+                        
+                      
+                      
+                    
+                  </div>
+                  
+                </div>
+              </div>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+
+              <br>
+              <br>
+              <hr>
+              <br>
+              <div style="text-align: center;" class="main-button">
+                <a href="/grade" >다시 입력하기</a>
+                <a href="/" >Home</a>
+              </div>
+
+
+
+            <%-include('footer.ejs')%>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+    
+    
+
